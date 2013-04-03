@@ -107,7 +107,8 @@ LIBRARIES = \
      libraries/boost_1_47_0 \
      libraries/protobuf-2.3.0 \
      libraries/dreadthread \
-     libraries/libmikmod-3.1.11
+     libraries/libmikmod-3.1.11 \
+     libraries/liboggz-1.1.1
 
 ifeq ($(NACL_GLIBC), 1)
   LIBRARIES += \
@@ -152,6 +153,7 @@ $(PACKAGES:%=$(SENT)/%): $(SENT)/%:
 # packages with dependencies
 $(SENT)/libraries/libvorbis-1.2.3: libraries/libogg-1.1.4
 $(SENT)/libraries/libtheora-1.1.1: libraries/libogg-1.1.4
+$(SENT)/libraries/liboggz-1.1.1: libraries/libogg-1.1.4
 $(SENT)/libraries/flac-1.2.1: libraries/libogg-1.1.4
 $(SENT)/libraries/speex-1.2rc1: libraries/libogg-1.1.4
 $(SENT)/libraries/fontconfig-2.7.3: libraries/expat-2.0.1 libraries/freetype-2.1.10
@@ -197,6 +199,7 @@ png: libraries/libpng-1.2.40 ;
 tiff: libraries/tiff-3.9.1 ;
 freeimage: libraries/FreeImage-3.14.1 ;
 ogg: libraries/libogg-1.1.4 ;
+oggz: libraries/liboggz-1.1.1 ;
 vorbis: libraries/libvorbis-1.2.3 ;
 lame: libraries/lame-398-2 ;
 faad: libraries/faad2-2.7 ;
